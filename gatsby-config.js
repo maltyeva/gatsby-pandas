@@ -4,15 +4,25 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-module.exports = {
+ module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `Pandas eating lots`,
+  },
   plugins: [
-    `gatsby-plugin-emotion`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `src`,
+      path: `${__dirname}/src/`,
     },
+  },
+  `gatsby-plugin-emotion`,
+  {
+    resolve: `gatsby-plugin-typography`,
+    options: {
+      pathToConfigModule: `src/utils/typography`,
+    },
+  },
   ],
 }
